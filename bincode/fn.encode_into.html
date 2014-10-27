@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API stability overview for the Rust `binary_encode` crate.">
-    <meta name="keywords" content="rust, rustlang, rust-lang">
+    <meta name="description" content="API documentation for the Rust `encode_into` fn in crate `bincode`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, encode_into">
 
-    <title>binary_encode - Stability dashboard</title>
+    <title>bincode::encode_into - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../main.css">
 
@@ -26,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'></p>
+        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html'>EncoderWriter</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html'>decode</a><a class='fn ' href='fn.decode_from.html'>decode_from</a><a class='fn ' href='fn.encode.html'>encode</a><a class='fn current' href='fn.encode_into.html'>encode_into</a></div>
     </section>
 
     <nav class="sub">
@@ -40,19 +40,12 @@
         </form>
     </nav>
 
-    <section id='main' class="content mod"><h1 class='fqn'>Stability dashboard: crate <a class='mod' href='index.html'>binary_encode</a></h1>
-This dashboard summarizes the stability levels for all of the public modules of
-the crate, according to the total number of items at each level in the module and
-its children (percentages total for binary_encode):
-<blockquote>
-<a class='stability Stable'></a> stable (0%),<br/>
-<a class='stability Unstable'></a> unstable (0%),<br/>
-<a class='stability Experimental'></a> experimental (0%),<br/>
-<a class='stability Deprecated'></a> deprecated (0%),<br/>
-<a class='stability Unmarked'></a> unmarked (100%)
-</blockquote>
-The counts do not include methods or trait
-implementations that are visible only through a re-exported type.<table><tr><td><a href='index.html'>binary_encode</a></td><td class='summary-column'><span class='summary Stable' style='width: 0.0000%; display: inline-block'>&nbsp</span><span class='summary Unstable' style='width: 0.0000%; display: inline-block'>&nbsp</span><span class='summary Experimental' style='width: 0.0000%; display: inline-block'>&nbsp</span><span class='summary Deprecated' style='width: 0.0000%; display: inline-block'>&nbsp</span><span class='summary Unmarked' style='width: 100.0000%; display: inline-block'>&nbsp</span></td></tr></table></section>
+    <section id='main' class="content fn">
+<h1 class='fqn'><span class='in-band'>Function <a href='index.html'>bincode</a>::<wbr><a class='fn' href=''>encode_into</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-2108' href='../src/bincode/home/ty/workspace/rust/bincode/src/lib.rs.html#39-43'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn encode_into&lt;'a, W: 'a + <a class='trait' href='http://doc.rust-lang.org/nightly/std/io/trait.Writer.html' title='std::io::Writer'>Writer</a>, T: <a class='trait' href='http://doc.rust-lang.org/nightly/serialize/serialize/trait.Encodable.html' title='serialize::serialize::Encodable'>Encodable</a>&lt;<a class='struct' href='../bincode/struct.EncoderWriter.html' title='bincode::EncoderWriter'>EncoderWriter</a>&lt;'a, W&gt;, <a class='struct' href='http://doc.rust-lang.org/nightly/std/io/struct.IoError.html' title='std::io::IoError'>IoError</a>&gt;&gt;(t: &amp;T, w: &amp;mut W) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/std/io/type.IoResult.html' title='std::io::IoResult'>IoResult</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.unit.html'>()</a>&gt;</pre></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -92,7 +85,7 @@ implementations that are visible only through a re-exported type.<table><tr><td>
 
     <script>
         window.rootPath = "../";
-        window.currentCrate = "binary_encode";
+        window.currentCrate = "bincode";
         window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>

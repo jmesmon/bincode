@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="API documentation for the Rust `encode_into` fn in crate `binary_encode`.">
-    <meta name="keywords" content="rust, rustlang, rust-lang, encode_into">
+    <meta name="description" content="API documentation for the Rust `encode` fn in crate `bincode`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, encode">
 
-    <title>binary_encode::encode_into - Rust</title>
+    <title>bincode::encode - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../main.css">
 
@@ -26,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>binary_encode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html'>EncoderWriter</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html'>decode</a><a class='fn ' href='fn.decode_from.html'>decode_from</a><a class='fn ' href='fn.encode.html'>encode</a><a class='fn current' href='fn.encode_into.html'>encode_into</a></div>
+        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html'>EncoderWriter</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html'>decode</a><a class='fn ' href='fn.decode_from.html'>decode_from</a><a class='fn current' href='fn.encode.html'>encode</a><a class='fn ' href='fn.encode_into.html'>encode_into</a></div>
     </section>
 
     <nav class="sub">
@@ -41,11 +41,11 @@
     </nav>
 
     <section id='main' class="content fn">
-<h1 class='fqn'><div class='in-band'>Function <a href='index.html'>binary_encode</a>::<wbr><a class='fn' href=''>encode_into</a><wbr></div><div class='out-of-band'><span id='render-detail'>
+<h1 class='fqn'><span class='in-band'>Function <a href='index.html'>bincode</a>::<wbr><a class='fn' href=''>encode</a><wbr></span><span class='out-of-band'><span id='render-detail'>
             <a id="collapse-all" href="#">[-]
             </a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-2181' href='../src/binary_encode/home/ty/workspace/rust/encode-stream/src/lib.rs.html#33-41'>[src]</a></div></h1>
-<pre class='rust fn'>pub fn encode_into&lt;W: <a class='trait' href='http://doc.rust-lang.org/master/std/io/trait.Writer.html' title='std::io::Writer'>Writer</a>, T: <a class='trait' href='http://doc.rust-lang.org/master/serialize/serialize/trait.Encodable.html' title='serialize::serialize::Encodable'>Encodable</a>&lt;<a class='struct' href='../binary_encode/struct.EncoderWriter.html' title='binary_encode::EncoderWriter'>EncoderWriter</a>&lt;W&gt;, <a class='struct' href='http://doc.rust-lang.org/master/std/io/struct.IoError.html' title='std::io::IoError'>IoError</a>&gt;&gt;(t: &amp;T, w: W) -&gt; <a class='type' href='http://doc.rust-lang.org/master/core/result/type.Result.html' title='core::result::Result'>Result</a>&lt;W, <a href='http://doc.rust-lang.org/master/std/primitive.tuple.html'>(W, <a class='struct' href='http://doc.rust-lang.org/master/std/io/struct.IoError.html' title='std::io::IoError'>IoError</a>)</a>&gt;</pre></section>
+        </span><a id='src-2031' href='../src/bincode/home/ty/workspace/rust/bincode/src/lib.rs.html#23-29'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn encode&lt;'a, T: <a class='trait' href='http://doc.rust-lang.org/nightly/serialize/serialize/trait.Encodable.html' title='serialize::serialize::Encodable'>Encodable</a>&lt;<a class='struct' href='../bincode/struct.EncoderWriter.html' title='bincode::EncoderWriter'>EncoderWriter</a>&lt;'a, <a class='struct' href='http://doc.rust-lang.org/nightly/std/io/mem/struct.MemWriter.html' title='std::io::mem::MemWriter'>MemWriter</a>&gt;, <a class='struct' href='http://doc.rust-lang.org/nightly/std/io/struct.IoError.html' title='std::io::IoError'>IoError</a>&gt;&gt;(t: &amp;T) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/std/io/type.IoResult.html' title='std::io::IoResult'>IoResult</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;&gt;</pre></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
@@ -85,7 +85,7 @@
 
     <script>
         window.rootPath = "../";
-        window.currentCrate = "binary_encode";
+        window.currentCrate = "bincode";
         window.playgroundUrl = "";
     </script>
     <script src="../jquery.js"></script>
