@@ -26,7 +26,7 @@
 
     <section class="sidebar">
         
-        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html'>EncoderWriter</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html'>decode</a><a class='fn ' href='fn.decode_from.html'>decode_from</a><a class='fn current' href='fn.encode.html'>encode</a><a class='fn ' href='fn.encode_into.html'>encode_into</a></div>
+        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html'>EncoderWriter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.DecodingError.html'>DecodingError</a><a class='enum ' href='enum.EncodingError.html'>EncodingError</a><a class='enum ' href='enum.SizeLimit.html'>SizeLimit</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html'>decode</a><a class='fn ' href='fn.decode_from.html'>decode_from</a><a class='fn current' href='fn.encode.html'>encode</a><a class='fn ' href='fn.encode_into.html'>encode_into</a><a class='fn ' href='fn.encoded_size.html'>encoded_size</a></div>
     </section>
 
     <nav class="sub">
@@ -44,8 +44,12 @@
 <h1 class='fqn'><span class='in-band'>Function <a href='index.html'>bincode</a>::<wbr><a class='fn' href=''>encode</a><wbr></span><span class='out-of-band'><span id='render-detail'>
             <a id="collapse-all" href="#">[-]
             </a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-2031' href='../src/bincode/home/ty/workspace/rust/bincode/src/lib.rs.html#23-29'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn encode&lt;'a, T: <a class='trait' href='http://doc.rust-lang.org/nightly/serialize/serialize/trait.Encodable.html' title='serialize::serialize::Encodable'>Encodable</a>&lt;<a class='struct' href='../bincode/struct.EncoderWriter.html' title='bincode::EncoderWriter'>EncoderWriter</a>&lt;'a, <a class='struct' href='http://doc.rust-lang.org/nightly/std/io/mem/struct.MemWriter.html' title='std::io::mem::MemWriter'>MemWriter</a>&gt;, <a class='struct' href='http://doc.rust-lang.org/nightly/std/io/struct.IoError.html' title='std::io::IoError'>IoError</a>&gt;&gt;(t: &amp;T) -&gt; <a class='type' href='http://doc.rust-lang.org/nightly/std/io/type.IoResult.html' title='std::io::IoResult'>IoResult</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;&gt;</pre></section>
+        </span><a id='src-5931' href='../src/bincode/lib.rs.html#98-104'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn encode&lt;T: <a class='trait' href='../rustc-serialize/serialize/trait.Encodable.html' title='rustc-serialize::serialize::Encodable'>Encodable</a>&gt;(t: &amp;T, size_limit: <a class='enum' href='../bincode/enum.SizeLimit.html' title='bincode::SizeLimit'>SizeLimit</a>) -&gt; <a class='type' href='../bincode/type.EncodingResult.html' title='bincode::EncodingResult'>EncodingResult</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;&gt;</pre><div class='docblock'><p>Encodes an encodable object into a <code>Vec</code> of bytes.</p>
+
+<p>If the encoding would take more bytes than allowed by <code>size_limit</code>,
+an error is returned.</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

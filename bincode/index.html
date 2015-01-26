@@ -44,43 +44,92 @@
 <h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>bincode</a><wbr></span><span class='out-of-band'><a href='stability.html'>[stability]</a> <span id='render-detail'>
             <a id="collapse-all" href="#">[-]
             </a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-0' href='../src/bincode/home/ty/workspace/rust/bincode/src/lib.rs.html#1-53'>[src]</a></span></h1>
+        </span><a id='src-0' href='../src/bincode/lib.rs.html#1-159'>[src]</a></span></h1>
 <h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.DecoderReader.html'
                                title='bincode::DecoderReader'>DecoderReader</a></td>
-                        <td class='docblock short'></td>
+                        <td class='docblock short'><p>A Decoder that reads bytes from a buffer.</p>
+</td>
                     </tr>
                 
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.EncoderWriter.html'
                                title='bincode::EncoderWriter'>EncoderWriter</a></td>
-                        <td class='docblock short'></td>
+                        <td class='docblock short'><p>An Encoder that encodes values directly into a Writer.</p>
+</td>
+                    </tr>
+                </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='enum' href='enum.DecodingError.html'
+                               title='bincode::DecodingError'>DecodingError</a></td>
+                        <td class='docblock short'><p>An error that can be produced during decoding.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='enum' href='enum.EncodingError.html'
+                               title='bincode::EncodingError'>EncodingError</a></td>
+                        <td class='docblock short'><p>An error that can be produced during encoding.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='enum' href='enum.SizeLimit.html'
+                               title='bincode::SizeLimit'>SizeLimit</a></td>
+                        <td class='docblock short'><p><code>bincode</code> is a crate for encoding and decoding using a tiny binary
+serialization strategy.</p>
+</td>
                     </tr>
                 </table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
 <table>
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='fn' href='fn.decode.html'
                                title='bincode::decode'>decode</a></td>
-                        <td class='docblock short'></td>
+                        <td class='docblock short'><p>Decodes a slice of bytes into an object.</p>
+</td>
                     </tr>
                 
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='fn' href='fn.decode_from.html'
                                title='bincode::decode_from'>decode_from</a></td>
-                        <td class='docblock short'></td>
+                        <td class='docblock short'><p>Decoes an object directly from a <code>Buffer</code>ed Reader.</p>
+</td>
                     </tr>
                 
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='fn' href='fn.encode.html'
                                title='bincode::encode'>encode</a></td>
-                        <td class='docblock short'></td>
+                        <td class='docblock short'><p>Encodes an encodable object into a <code>Vec</code> of bytes.</p>
+</td>
                     </tr>
                 
                     <tr>
                         <td><a class='stability Unmarked' title='No stability level'></a><a class='fn' href='fn.encode_into.html'
                                title='bincode::encode_into'>encode_into</a></td>
+                        <td class='docblock short'><p>Encodes an object directly into a <code>Writer</code>.</p>
+</td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='fn' href='fn.encoded_size.html'
+                               title='bincode::encoded_size'>encoded_size</a></td>
+                        <td class='docblock short'><p>Returns the size that an object would be if encoded using bincode.</p>
+</td>
+                    </tr>
+                </table><h2 id='types' class='section-header'><a href="#types">Type Definitions</a></h2>
+<table>
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='type' href='type.DecodingResult.html'
+                               title='bincode::DecodingResult'>DecodingResult</a></td>
+                        <td class='docblock short'></td>
+                    </tr>
+                
+                    <tr>
+                        <td><a class='stability Unmarked' title='No stability level'></a><a class='type' href='type.EncodingResult.html'
+                               title='bincode::EncodingResult'>EncodingResult</a></td>
                         <td class='docblock short'></td>
                     </tr>
                 </table></section>
