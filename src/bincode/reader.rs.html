@@ -25,7 +25,7 @@
     
 
     <section class="sidebar">
-        
+        <a href='../../bincode/index.html'><img src='./icon.png' alt='' width='100'></a>
         
     </section>
 
@@ -350,7 +350,7 @@
 <span id="308">308</span>
 <span id="309">309</span>
 </pre><pre class='rust '>
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::{<span class='ident'>Buffer</span>, <span class='ident'>Reader</span>, <span class='ident'>IoError</span>};
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>old_io</span>::{<span class='ident'>Buffer</span>, <span class='ident'>Reader</span>, <span class='ident'>IoError</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>num</span>::{<span class='ident'>cast</span>, <span class='ident'>NumCast</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>error</span>::{<span class='ident'>Error</span>, <span class='ident'>FromError</span>};
 <span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>fmt</span>;
@@ -359,7 +359,7 @@
 
 <span class='kw'>use</span> <span class='ident'>super</span>::<span class='ident'>SizeLimit</span>;
 
-<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>InvalidEncoding</span> {
     <span class='ident'>desc</span>: <span class='kw-2'>&amp;</span><span class='lifetime'>&#39;static</span> <span class='ident'>str</span>,
     <span class='ident'>detail</span>: <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>String</span><span class='op'>&gt;</span>,
@@ -380,7 +380,7 @@
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// If decoding from a Buffer, assume that the buffer has been left</span>
 <span class='doccomment'>/// in an invalid state.</span>
-<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Show</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Clone</span>, <span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>DecodingError</span> {
     <span class='doccomment'>/// If the error stems from the reader that is being used</span>
     <span class='doccomment'>/// during decoding, that error will be stored and returned here.</span>

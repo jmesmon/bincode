@@ -25,8 +25,8 @@
     
 
     <section class="sidebar">
-        
-        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html'>EncoderWriter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.DecodingError.html'>DecodingError</a><a class='enum ' href='enum.EncodingError.html'>EncodingError</a><a class='enum ' href='enum.SizeLimit.html'>SizeLimit</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html'>decode</a><a class='fn current' href='fn.decode_from.html'>decode_from</a><a class='fn ' href='fn.encode.html'>encode</a><a class='fn ' href='fn.encode_into.html'>encode_into</a><a class='fn ' href='fn.encoded_size.html'>encoded_size</a></div>
+        <a href='../bincode/index.html'><img src='./icon.png' alt='' width='100'></a>
+        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html' title='A Decoder that reads bytes from a buffer.'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html' title='An Encoder that encodes values directly into a Writer.'>EncoderWriter</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.DecodingError.html' title='An error that can be produced during decoding.'>DecodingError</a><a class='enum ' href='enum.EncodingError.html' title='An error that can be produced during encoding.'>EncodingError</a><a class='enum ' href='enum.SizeLimit.html' title='`bincode` is a crate for encoding and decoding using a tiny binary serialization strategy.'>SizeLimit</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html' title='Decodes a slice of bytes into an object.'>decode</a><a class='fn current' href='fn.decode_from.html' title='Decoes an object directly from a `Buffer`ed Reader.'>decode_from</a><a class='fn ' href='fn.encode.html' title='Encodes an encodable object into a `Vec` of bytes.'>encode</a><a class='fn ' href='fn.encode_into.html' title='Encodes an object directly into a `Writer`.'>encode_into</a><a class='fn ' href='fn.encoded_size.html' title='Returns the size that an object would be if encoded using bincode.'>encoded_size</a></div>
     </section>
 
     <nav class="sub">
@@ -44,8 +44,8 @@
 <h1 class='fqn'><span class='in-band'>Function <a href='index.html'>bincode</a>::<wbr><a class='fn' href=''>decode_from</a><wbr></span><span class='out-of-band'><span id='render-detail'>
             <a id="collapse-all" href="#">[-]
             </a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-6064' href='../src/bincode/lib.rs.html#144-147'>[src]</a></span></h1>
-<pre class='rust fn'>pub fn decode_from&lt;R: <a class='trait' href='http://doc.rust-lang.org/nightly/std/io/trait.Buffer.html' title='std::io::Buffer'>Buffer</a>, T: <a class='trait' href='../rustc-serialize/serialize/trait.Decodable.html' title='rustc-serialize::serialize::Decodable'>Decodable</a>&gt;(r: &amp;mut R, size_limit: <a class='enum' href='../bincode/enum.SizeLimit.html' title='bincode::SizeLimit'>SizeLimit</a>) -&gt; <a class='type' href='../bincode/type.DecodingResult.html' title='bincode::DecodingResult'>DecodingResult</a>&lt;T&gt;</pre><div class='docblock'><p>Decoes an object directly from a <code>Buffer</code>ed Reader.</p>
+        </span><a id='src-6085' href='../src/bincode/lib.rs.html#146-149'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn decode_from&lt;R: <a class='trait' href='http://doc.rust-lang.org/nightly/std/old_io/trait.Buffer.html' title='std::old_io::Buffer'>Buffer</a>, T: <a class='trait' href='../rustc-serialize/serialize/trait.Decodable.html' title='rustc-serialize::serialize::Decodable'>Decodable</a>&gt;(r: &amp;mut R, size_limit: <a class='enum' href='../bincode/enum.SizeLimit.html' title='bincode::SizeLimit'>SizeLimit</a>) -&gt; <a class='type' href='../bincode/type.DecodingResult.html' title='bincode::DecodingResult'>DecodingResult</a>&lt;T&gt;</pre><div class='docblock'><p>Decoes an object directly from a <code>Buffer</code>ed Reader.</p>
 
 <p>If the provided <code>SizeLimit</code> is reached, the decode will bail immediately.
 A SizeLimit can help prevent an attacker from flooding your server with

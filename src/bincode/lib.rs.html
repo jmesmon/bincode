@@ -25,7 +25,7 @@
     
 
     <section class="sidebar">
-        
+        <a href='../../bincode/index.html'><img src='./icon.png' alt='' width='100'></a>
         
     </section>
 
@@ -199,6 +199,8 @@
 <span id="157">157</span>
 <span id="158">158</span>
 <span id="159">159</span>
+<span id="160">160</span>
+<span id="161">161</span>
 </pre><pre class='rust '>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_name</span> <span class='op'>=</span> <span class='string'>&quot;bincode&quot;</span>]</span>
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>crate_type</span> <span class='op'>=</span> <span class='string'>&quot;rlib&quot;</span>]</span>
@@ -206,9 +208,11 @@
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>allow</span>(<span class='ident'>unstable</span>)]</span>
 
+<span class='attribute'>#<span class='op'>!</span>[<span class='ident'>doc</span>(<span class='ident'>html_logo_url</span> <span class='op'>=</span> <span class='string'>&quot;./icon.png&quot;</span>)]</span>
+
 <span class='kw'>extern</span> <span class='kw'>crate</span> <span class='string'>&quot;rustc-serialize&quot;</span> <span class='kw'>as</span> <span class='ident'>rustc_serialize</span>;
 
-<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>io</span>::{<span class='ident'>Buffer</span>, <span class='ident'>MemWriter</span>};
+<span class='kw'>use</span> <span class='ident'>std</span>::<span class='ident'>old_io</span>::{<span class='ident'>Buffer</span>, <span class='ident'>MemWriter</span>};
 <span class='kw'>use</span> <span class='ident'>rustc_serialize</span>::{<span class='ident'>Encodable</span>, <span class='ident'>Decodable</span>};
 
 <span class='kw'>pub</span> <span class='kw'>use</span> <span class='ident'>writer</span>::{<span class='ident'>EncoderWriter</span>, <span class='ident'>EncodingResult</span>, <span class='ident'>EncodingError</span>};
@@ -249,8 +253,8 @@
 <span class='doccomment'>///! ```rust</span>
 <span class='doccomment'>///! #![allow(unstable)]</span>
 <span class='doccomment'>///! extern crate bincode;</span>
-<span class='doccomment'>///! use std::io::pipe::PipeStream;</span>
-<span class='doccomment'>///! use std::io::BufferedReader;</span>
+<span class='doccomment'>///! use std::old_io::pipe::PipeStream;</span>
+<span class='doccomment'>///! use std::old_io::BufferedReader;</span>
 <span class='doccomment'>///! fn main() {</span>
 <span class='doccomment'>///!     // The pipes that we will be using to send values across.</span>
 <span class='doccomment'>///!     let streams = PipeStream::pair().unwrap();</span>
@@ -287,7 +291,7 @@
 <span class='doccomment'>/// encoding function, the encoder will verify that the structure can be encoded</span>
 <span class='doccomment'>/// within that limit.  This verification occurs before any bytes are written to</span>
 <span class='doccomment'>/// the Writer, so recovering from an the error is possible.</span>
-<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Clone</span>, <span class='ident'>Copy</span>, <span class='ident'>Show</span>, <span class='ident'>Hash</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Ord</span>, <span class='ident'>PartialOrd</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Clone</span>, <span class='ident'>Copy</span>, <span class='ident'>Debug</span>, <span class='ident'>Hash</span>, <span class='ident'>Eq</span>, <span class='ident'>PartialEq</span>, <span class='ident'>Ord</span>, <span class='ident'>PartialOrd</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>SizeLimit</span> {
     <span class='ident'>Infinite</span>,
     <span class='ident'>Bounded</span>(<span class='ident'>u64</span>)
