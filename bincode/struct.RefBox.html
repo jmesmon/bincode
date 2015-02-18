@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RefBox` struct in crate `bincode`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RefBox">
+
+    <title>bincode::RefBox - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        <a href='../bincode/index.html'><img src='./icon.png' alt='' width='100'></a>
+        <p class='location'><a href='index.html'>bincode</a></p><div class='block struct'><h2>Structs</h2><a class='struct ' href='struct.DecoderReader.html' title='A Decoder that reads bytes from a buffer.'>DecoderReader</a><a class='struct ' href='struct.EncoderWriter.html' title='An Encoder that encodes values directly into a Writer.'>EncoderWriter</a><a class='struct current' href='struct.RefBox.html' title=''>RefBox</a></div><div class='block enum'><h2>Enums</h2><a class='enum ' href='enum.DecodingError.html' title='An error that can be produced during decoding.'>DecodingError</a><a class='enum ' href='enum.EncodingError.html' title='An error that can be produced during encoding.'>EncodingError</a><a class='enum ' href='enum.SizeLimit.html' title='`bincode` is a crate for encoding and decoding using a tiny binary serialization strategy.'>SizeLimit</a></div><div class='block fn'><h2>Functions</h2><a class='fn ' href='fn.decode.html' title='Decodes a slice of bytes into an object.'>decode</a><a class='fn ' href='fn.decode_from.html' title='Decoes an object directly from a `Buffer`ed Reader.'>decode_from</a><a class='fn ' href='fn.encode.html' title='Encodes an encodable object into a `Vec` of bytes.'>encode</a><a class='fn ' href='fn.encode_into.html' title='Encodes an object directly into a `Writer`.'>encode_into</a><a class='fn ' href='fn.encoded_size.html' title='Returns the size that an object would be if encoded using bincode.'>encoded_size</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>bincode</a>::<wbr><a class='struct' href=''>RefBox</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-5095' href='../src/bincode/refbox.rs.html#7-9'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct RefBox&lt;'a, T: 'a&gt; {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a, T&gt; <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'a, T&gt;</code></h3><div class='impl-items'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>(v: &amp;'a T) -&gt; <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'a, T&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;T&gt; <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'static, T&gt;</code></h3><div class='impl-items'><h4 id='method.take' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.take' class='fnname'>take</a>(self) -&gt; <a class='struct' href='http://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;T&gt;</code></h4>
+<h4 id='method.try_take' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.try_take' class='fnname'>try_take</a>(self) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='http://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html' title='alloc::boxed::Box'>Box</a>&lt;T&gt;, <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'static, T&gt;&gt;</code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;'a, T: <a class='trait' href='../rustc-serialize/serialize/trait.Encodable.html' title='rustc-serialize::serialize::Encodable'>Encodable</a>&gt; <a class='trait' href='../rustc-serialize/serialize/trait.Encodable.html' title='rustc-serialize::serialize::Encodable'>Encodable</a> for <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'a, T&gt;</code></h3><div class='impl-items'><h4 id='method.encode' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.encode' class='fnname'>encode</a>&lt;S: <a class='trait' href='../rustc-serialize/serialize/trait.Encoder.html' title='rustc-serialize::serialize::Encoder'>Encoder</a>&gt;(&amp;self, s: &amp;mut S) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a href='http://doc.rust-lang.org/nightly/std/primitive.tuple.html'>()</a>, Error&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;T: <a class='trait' href='../rustc-serialize/serialize/trait.Decodable.html' title='rustc-serialize::serialize::Decodable'>Decodable</a>&gt; <a class='trait' href='../rustc-serialize/serialize/trait.Decodable.html' title='rustc-serialize::serialize::Decodable'>Decodable</a> for <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'static, T&gt;</code></h3><div class='impl-items'><h4 id='method.decode' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.decode' class='fnname'>decode</a>&lt;D: <a class='trait' href='../rustc-serialize/serialize/trait.Decoder.html' title='rustc-serialize::serialize::Decoder'>Decoder</a>&gt;(d: &amp;mut D) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'static, T&gt;, Error&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Stable' title='Stable'></a><code>impl&lt;'a, T&gt; <a class='trait' href='http://doc.rust-lang.org/nightly/core/ops/trait.Deref.html' title='core::ops::Deref'>Deref</a> for <a class='struct' href='../bincode/struct.RefBox.html' title='bincode::RefBox'>RefBox</a>&lt;'a, T&gt;</code></h3><div class='impl-items'><h4 id='assoc_type.Target' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Target = T</code></h4>
+<h4 id='method.deref' class='method'><a class='stability Stable' title='Stable'></a><code>fn <a href='#method.deref' class='fnname'>deref</a>(&amp;self) -&gt; &amp;T</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "bincode";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>

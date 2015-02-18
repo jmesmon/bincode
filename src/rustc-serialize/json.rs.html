@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="rustdoc">
-    <meta name="description" content="Source to the Rust file `/home/ty/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.2.12/src/json.rs`.">
+    <meta name="description" content="Source to the Rust file `/Users/tyoverby/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-serialize-0.2.12/src/json.rs`.">
     <meta name="keywords" content="rust, rustlang, rust-lang">
 
     <title>json.rs.html -- source</title>
@@ -4852,7 +4852,7 @@
 
 <span class='kw'>impl</span> <span class='ident'>Json</span> {
     <span class='doccomment'>/// Decodes a json value from an `&amp;mut old_io::Reader`</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_reader</span>(<span class='ident'>rdr</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>old_io</span>::<span class='ident'>Reader</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Self</span>, <span class='ident'>BuilderError</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_reader</span>(<span class='ident'>rdr</span>: <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>old_io</span>::<span class='ident'>Reader</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='kw'>Self</span>, <span class='ident'>BuilderError</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='ident'>contents</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>rdr</span>.<span class='ident'>read_to_end</span>() {
             <span class='prelude-val'>Ok</span>(<span class='ident'>c</span>)  <span class='op'>=&gt;</span> <span class='ident'>c</span>,
             <span class='prelude-val'>Err</span>(<span class='ident'>e</span>) <span class='op'>=&gt;</span> <span class='kw'>return</span> <span class='prelude-val'>Err</span>(<span class='ident'>io_error_to_error</span>(<span class='ident'>e</span>))
@@ -4866,7 +4866,7 @@
     }
 
     <span class='doccomment'>/// Decodes a json value from a string</span>
-    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_str</span>(<span class='ident'>s</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='ident'>Self</span>, <span class='ident'>BuilderError</span><span class='op'>&gt;</span> {
+    <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>from_str</span>(<span class='ident'>s</span>: <span class='kw-2'>&amp;</span><span class='ident'>str</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Result</span><span class='op'>&lt;</span><span class='kw'>Self</span>, <span class='ident'>BuilderError</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>builder</span> <span class='op'>=</span> <span class='ident'>Builder</span>::<span class='ident'>new</span>(<span class='ident'>s</span>.<span class='ident'>chars</span>());
         <span class='ident'>builder</span>.<span class='ident'>build</span>()
     }
