@@ -43,7 +43,9 @@ pub enum DecodingError {
     InvalidEncoding(InvalidEncoding),
     /// If decoding a message takes more than the provided size limit, this
     /// error is returned.
-    SizeLimit
+    SizeLimit,
+
+    Detail(String),
 }
 
 impl fmt::Display for DecodingError {
@@ -54,7 +56,9 @@ impl fmt::Display for DecodingError {
             DecodingError::InvalidEncoding(ref ib) =>
                 write!(fmt, "InvalidEncoding: {}", ib),
             DecodingError::SizeLimit =>
-                write!(fmt, "SizeLimit")
+                write!(fmt, "SizeLimit"),
+            DecodingError::Detail(ref s) =>
+                write!(fmt, "Detail: {}", s),
         }
     }
 }
@@ -77,7 +81,8 @@ impl Error for DecodingError {
         match *self {
             DecodingError::IoError(ref err) => Error::description(err),
             DecodingError::InvalidEncoding(ref ib) => ib.desc,
-            DecodingError::SizeLimit => "the size limit for decoding has been reached"
+            DecodingError::SizeLimit => "the size limit for decoding has been reached",
+            DecodingError::Detail(ref s) => s,
         }
     }
 
@@ -85,7 +90,8 @@ impl Error for DecodingError {
         match *self {
             DecodingError::IoError(ref err)     => err.cause(),
             DecodingError::InvalidEncoding(_) => None,
-            DecodingError::SizeLimit => None
+            DecodingError::SizeLimit => None,
+            DecodingError::Detail(_) => None,
         }
     }
 }
@@ -337,11 +343,14 @@ impl<'a, R: Read> Decoder for DecoderReader<'a, R> {
     {
         use std::mem::size_of;
         use std::usize;
+        use std::intrinsics::type_name;
         let len = try!(self.read_usize());
         if let SizeLimit::Bounded(x) = self.size_limit {
-            if (len > usize::MAX / size_of::<T>()) ||
-                    (len * size_of::<T>()) as u64 > (x - self.read) {
-                return Err(DecodingError::SizeLimit)
+            if (len > usize::MAX / size_of::<u8>()) ||
+                    (len * size_of::<u8>()) as u64 > (x - self.read) {
+                return Err(DecodingError::Detail(format!("Oversized seq: limit = {:?}, read = {:?}, num elems = {:?}, elem size = {:?}, type_name = {}",
+                        x, self.read, len, size_of::<T>(),
+                        unsafe {type_name::<T>()})));
             }
         }
         f(self, len)
@@ -358,8 +367,8 @@ impl<'a, R: Read> Decoder for DecoderReader<'a, R> {
         use std::usize;
         let len = try!(self.read_usize());
         if let SizeLimit::Bounded(x) = self.size_limit {
-            if (len > usize::MAX / size_of::<T>()) ||
-                    (len * size_of::<T>()) as u64 > (x - self.read) {
+            if (len > usize::MAX / size_of::<u8>()) ||
+                    (len * size_of::<u8>()) as u64 > (x - self.read) {
                 return Err(DecodingError::SizeLimit)
             }
         }

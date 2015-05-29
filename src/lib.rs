@@ -27,6 +27,7 @@
 #![crate_type = "rlib"]
 #![crate_type = "dylib"]
 
+#![feature(core)]
 #![doc(html_logo_url = "./icon.png")]
 //`#![feature(unicode)]
 
